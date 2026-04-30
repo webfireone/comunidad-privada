@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Growith</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Growith</span>
+            </a>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 19l-7-7 7-7M18 19l-7-7 7-7"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="sidebar-link active" data-section="dashboard">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="#campaigns" class="sidebar-link" data-section="campaigns">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+                <span>Campaigns</span>
+            </a>
+            <a href="#crm" class="sidebar-link" data-section="crm">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+                <span>Social CRM</span>
+            </a>
+            <a href="#analytics" class="sidebar-link" data-section="analytics">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+                <span>Analytics</span>
+            </a>
+            <a href="#media" class="sidebar-link" data-section="media">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/><line x1="17" y1="17" x2="22" y2="17"/>
+                </svg>
+                <span>Media</span>
+            </a>
+            <a href="#settings" class="sidebar-link" data-section="settings">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+                </svg>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AD</div>
+                <div class="user-details">
+                    <span class="user-name">Admin</span>
+                    <span class="user-email">admin@growith.com</span>
+                </div>
+            </div>
+            <button class="btn-logout" onclick="alert('Logout functionality - connect to Firebase Auth')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main" id="mainContent">
+        <!-- Top Bar -->
+        <header class="admin-header">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18"/>
+                </svg>
+            </button>
+            <h1 class="page-title" id="pageTitle">Dashboard</h1>
+            <div class="header-actions">
+                <button class="btn-icon" title="Notifications">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>
+                    </svg>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="btn-primary btn-sm">New Campaign</button>
+            </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section class="admin-section active" id="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Users</span>
+                        <span class="stat-value" data-count="2847">0</span>
+                        <span class="stat-change positive">+12.5%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Active Campaigns</span>
+                        <span class="stat-value" data-count="156">0</span>
+                        <span class="stat-change positive">+8.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Conversions</span>
+                        <span class="stat-value" data-count="3241">0</span>
+                        <span class="stat-change positive">+23.1%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Avg. Response</span>
+                        <span class="stat-value">2.4<span class="stat-unit">m</span></span>
+                        <span class="stat-change negative">-0.3m</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2-col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Campaign Performance</h3>
+                        <select class="select-minimal">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 90 days</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar-group">
+                                <div class="bar" style="--height: 65%"><span>Mon</span></div>
+                                <div class="bar" style="--height: 85%"><span>Tue</span></div>
+                                <div class="bar" style="--height: 45%"><span>Wed</span></div>
+                                <div class="bar" style="--height: 90%"><span>Thu</span></div>
+                                <div class="bar" style="--height: 75%"><span>Fri</span></div>
+                                <div class="bar" style="--height: 60%"><span>Sat</span></div>
+                                <div class="bar" style="--height: 50%"><span>Sun</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="link-small">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-dot green"></div>
+                            <div class="activity-content">
+                                <p>New campaign "Summer Sale" created</p>
+                                <span class="activity-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot blue"></div>
+                            <div class="activity-content">
+                                <p>User engagement up by 15%</p>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot purple"></div>
+                            <div class="activity-content">
+                                <p>CRM integration completed</p>
+                                <span class="activity-time">3 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot orange"></div>
+                            <div class="activity-content">
+                                <p>Monthly report generated</p>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campaigns Section -->
+        <section class="admin-section" id="campaigns">
+            <div class="section-header-bar">
+                <h2>Active Campaigns</h2>
+                <button class="btn-primary">+ New Campaign</button>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Campaign</th>
+                            <th>Status</th>
+                            <th>Users</th>
+                            <th>Conversion</th>
+                            <th>Revenue</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Summer Sale 2025</strong></td>
+                            <td><span class="badge active">Active</span></td>
+                            <td>1,247</td>
+                            <td>23.5%</td>
+                            <td>$45,230</td>
+                            <td><button class="btn-sm">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product Launch</strong></td>
+                            <td><span class="badge active">Active</span></td>
+                            <td>892</td>
+                            <td>18.7%</td>
+                            <td>$32,100</td>
+                            <td><button class="btn-sm">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Holiday Special</strong></td>
+                            <td><span class="badge paused">Paused</span></td>
+                            <td>634</td>
+                            <td>15.2%</td>
+                            <td>$21,450</td>
+                            <td><button class="btn-sm">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CRM Section -->
+        <section class="admin-section" id="crm">
+            <div class="section-header-bar">
+                <h2>Social CRM</h2>
+                <button class="btn-primary" id="refreshSocial">Refresh Data</button>
+            </div>
+            
+            <!-- Social Platform Stats -->
+            <div id="crmSocialStats" class="social-grid">
+                <!-- Rendered by crm-social.js -->
+            </div>
+
+            <div class="crm-grid" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>Recent Messages</h3>
+                    <div class="message-list">
+                        <div class="message-item">
+                            <div class="message-avatar">JD</div>
+                            <div class="message-content">
+                                <strong>John Doe</strong>
+                                <p>Interested in premium plan...</p>
+                                <span>2 min ago</span>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">SM</div>
+                            <div class="message-content">
+                                <strong>Sarah Miller</strong>
+                                <p>Question about integration...</p>
+                                <span>15 min ago</span>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">AJ</div>
+                            <div class="message-content">
+                                <strong>Alex Johnson</strong>
+                                <p>Need help with setup...</p>
+                                <span>1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Platform Distribution</h3>
+                    <div class="platform-stats">
+                        <div class="platform-item">
+                            <span class="platform-name">Instagram</span>
+                            <div class="platform-bar"><div class="platform-fill" style="--width: 45%"></div></div>
+                            <span class="platform-pct">45%</span>
+                        </div>
+                        <div class="platform-item">
+                            <span class="platform-name">Facebook</span>
+                            <div class="platform-bar"><div class="platform-fill" style="--width: 30%"></div></div>
+                            <span class="platform-pct">30%</span>
+                        </div>
+                        <div class="platform-item">
+                            <span class="platform-name">Twitter</span>
+                            <div class="platform-bar"><div class="platform-fill" style="--width: 15%"></div></div>
+                            <span class="platform-pct">15%</span>
+                        </div>
+                        <div class="platform-item">
+                            <span class="platform-name">LinkedIn</span>
+                            <div class="platform-bar"><div class="platform-fill" style="--width: 10%"></div></div>
+                            <span class="platform-pct">10%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section class="admin-section" id="analytics">
+            <div class="section-header-bar">
+                <h2>Analytics Overview</h2>
+                <select class="select-minimal">
+                    <option>Last 30 days</option>
+                    <option>Last 90 days</option>
+                    <option>This Year</option>
+                </select>
+            </div>
+            <div class="analytics-grid">
+                <div class="card full-width">
+                    <h3>Traffic Sources</h3>
+                    <div class="donut-chart">
+                        <div class="donut-placeholder">
+                            <div class="donut-center">
+                                <span class="donut-number">12.4K</span>
+                                <span class="donut-label">Visitors</span>
+                            </div>
+                        </div>
+                        <div class="donut-legend">
+                            <div class="legend-item"><span class="legend-dot" style="background: #0a3d2f"></span>Direct (40%)</div>
+                            <div class="legend-item"><span class="legend-dot" style="background: #34d399"></span>Social (35%)</div>
+                            <div class="legend-item"><span class="legend-dot" style="background: #f59e0b"></span>Search (20%)</div>
+                            <div class="legend-item"><span class="legend-dot" style="background: #6b7280"></span>Other (5%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="admin-section" id="media">
+            <div class="section-header-bar">
+                <h2>Media Library</h2>
+                <button class="btn-primary">+ Upload Media</button>
+            </div>
+            <div class="media-grid">
+                <div class="media-item">
+                    <div class="media-preview gradient-1">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                    </div>
+                    <div class="media-info">
+                        <span class="media-name">hero-banner.png</span>
+                        <span class="media-size">2.4 MB</span>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-preview gradient-2">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                        </svg>
+                    </div>
+                    <div class="media-info">
+                        <span class="media-name">intro-video.mp4</span>
+                        <span class="media-size">15.8 MB</span>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-preview gradient-3">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                    </div>
+                    <div class="media-info">
+                        <span class="media-name">report-2025.pdf</span>
+                        <span class="media-size">3.2 MB</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="admin-section" id="settings">
+            <div class="section-header-bar">
+                <h2>Settings</h2>
+            </div>
+            <div class="settings-grid">
+                <div class="card">
+                    <h3>Profile Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Display Name</label>
+                            <input type="text" value="Admin User" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="admin@growith.com" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Time Zone</label>
+                            <select class="form-input">
+                                <option>UTC-5 (Eastern)</option>
+                                <option>UTC-6 (Central)</option>
+                                <option>UTC-7 (Mountain)</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-primary">Save Changes</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>Notifications</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <span>Email Notifications</span>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <span>Push Notifications</span>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <span>Weekly Reports</span>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="crm-social.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

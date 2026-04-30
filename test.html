@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growith - Test Page</title>
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; padding: 2rem; background: #f3f4f6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #0a3d2f; margin-bottom: 1rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .btn { padding: 0.5rem 1rem; background: #0a3d2f; color: white; border: none; border-radius: 6px; cursor: pointer; margin: 0.25rem; }
+        .btn:hover { background: #1a5c45; }
+        .btn.red { background: #ef4444; }
+        .btn.blue { background: #3b82f6; }
+        .status { padding: 0.5rem; border-radius: 6px; margin: 0.5rem 0; font-size: 0.875rem; }
+        .status.ok { background: #d1fae5; color: #065f46; }
+        .status.error { background: #fee2e2; color: #991b1b; }
+        .status.info { background: #dbeafe; color: #1e40af; }
+        code { background: #f3f4f6; padding: 0.125rem 0.375rem; border-radius: 4px; font-size: 0.875rem; }
+        a { color: #0a3d2f; text-decoration: none; display: inline-block; margin: 0.25rem; padding: 0.5rem 1rem; background: white; border-radius: 6px; }
+        a:hover { background: #f3f4f6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>◆ Growith - Test & Demo</h1>
+        
+        <div class="card">
+            <h2>Navigation</h2>
+            <a href="index.html">Landing Page</a>
+            <a href="admin.html">Admin Panel</a>
+        </div>
+
+        <div class="card">
+            <h2>System Status</h2>
+            <div id="firebaseStatus" class="status info">Checking Firebase...</div>
+            <div id="filesStatus" class="status info">Checking files...</div>
+        </div>
+
+        <div class="card">
+            <h2>Firebase Tests</h2>
+            <button class="btn" onclick="testFirebaseConnection()">Test Connection</button>
+            <button class="btn blue" onclick="testSaveLead()">Test Save Lead</button>
+            <button class="btn" onclick="testAuth()">Test Auth</button>
+            <div id="testResults"></div>
+        </div>
+
+        <div class="card">
+            <h2>LocalStorage Data</h2>
+            <button class="btn" onclick="showLocalData()">Show Data</button>
+            <button class="btn red" onclick="clearLocalData()">Clear All Data</button>
+            <div id="localData"></div>
+        </div>
+
+        <div class="card">
+            <h2>Form Tests</h2>
+            <div>
+                <input type="email" id="testEmail" placeholder="test@example.com" style="padding:0.5rem; border:1px solid #ccc; border-radius:6px;">
+                <button class="btn" onclick="testContactForm()">Test Contact</button>
+                <button class="btn blue" onclick="testNewsletter()">Test Newsletter</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Console</h2>
+            <pre id="console" style="background:#1f2937; color:#10b981; padding:1rem; border-radius:8px; font-size:0.75rem; max-height:300px; overflow:auto;"></pre>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <script>
+        const consoleEl = document.getElementById('console');
+        function log(msg) {
+            consoleEl.textContent += msg + '\n';
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        // Check Firebase
+        setTimeout(() => {
+            const statusEl = document.getElementById('firebaseStatus');
+            if (typeof firebase !== 'undefined' && firebase.apps.length) {
+                statusEl.className = 'status ok';
+                statusEl.textContent = '✅ Firebase SDK loaded';
+                log('Firebase SDK loaded');
+            } else {
+                statusEl.className = 'status error';
+                statusEl.textContent = '❌ Firebase SDK not loaded (Demo mode)';
+                log('Firebase not loaded - running in demo mode');
+            }
+        }, 1000);
+
+        // Check files
+        const filesToCheck = ['index.html', 'admin.html', 'styles.css', 'script.js'];
+        const filesStatus = document.getElementById('filesStatus');
+        let filesOk = 0;
+        filesToCheck.forEach(file => {
+            fetch(file)
+                .then(r => {
+                    if (r.ok) filesOk++;
+                    if (filesOk === filesToCheck.length) {
+                        filesStatus.className = 'status ok';
+                        filesStatus.textContent = '✅ All files present';
+                    }
+                })
+                .catch(() => {});
+        });
+
+        // Test functions
+        function testFirebaseConnection() {
+            log('Testing Firebase connection...');
+            if (typeof firebase !== 'undefined' && firebase.apps.length) {
+                const db = firebase.firestore();
+                db.collection('test').add({ test: true, timestamp: new Date() })
+                    .then(() => {
+                        log('✅ Firebase connection successful!');
+                        alert('Firebase is working!');
+                    })
+                    .catch(err => {
+                        log('❌ Firebase error: ' + err.message);
+                        alert('Firebase error: ' + err.message);
+                    });
+            } else {
+                log('⚠️ Firebase not available - demo mode');
+                alert('Running in demo mode (Firebase not configured)');
+            }
+        }
+
+        function testSaveLead() {
+            const email = document.getElementById('testEmail').value || 'test@example.com';
+            log('Saving lead: ' + email);
+            
+            if (typeof firebase !== 'undefined' && firebase.apps.length) {
+                firebase.firestore().collection('leads').add({
+                    email: email,
+                    source: 'test_page',
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                }).then(() => {
+                    log('✅ Lead saved to Firebase!');
+                    alert('Lead saved!');
+                }).catch(err => {
+                    log('❌ Error: ' + err.message);
+                });
+            } else {
+                // Demo mode - save to localStorage
+                const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+                leads.push({ email, timestamp: new Date().toISOString() });
+                localStorage.setItem('leads', JSON.stringify(leads));
+                log('✅ Lead saved to localStorage (demo mode)');
+                alert('Lead saved in demo mode!');
+            }
+        }
+
+        function testAuth() {
+            if (typeof firebase !== 'undefined' && firebase.auth) {
+                firebase.auth().signInAnonymously()
+                    .then(() => {
+                        log('✅ Anonymous auth successful!');
+                        alert('Auth working!');
+                    })
+                    .catch(err => {
+                        log('❌ Auth error: ' + err.message);
+                    });
+            } else {
+                log('⚠️ Auth not available');
+                alert('Auth not configured');
+            }
+        }
+
+        function testContactForm() {
+            const email = document.getElementById('testEmail').value || 'test@example.com';
+            log('Testing contact form with: ' + email);
+            alert('Contact form would submit with email: ' + email);
+        }
+
+        function testNewsletter() {
+            const email = document.getElementById('testEmail').value || 'test@example.com';
+            log('Testing newsletter with: ' + email);
+            alert('Newsletter would subscribe: ' + email);
+        }
+
+        function showLocalData() {
+            const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+            const subs = JSON.parse(localStorage.getItem('subscribers') || '[]');
+            const visits = JSON.parse(localStorage.getItem('page_visits') || '[]');
+            
+            document.getElementById('localData').innerHTML = `
+                <p>Leads: ${leads.length}</p>
+                <p>Subscribers: ${subs.length}</p>
+                <p>Page Visits: ${visits.length}</p>
+                <pre style="font-size:0.75rem; margin-top:0.5rem;">${JSON.stringify({leads, subs, visits}, null, 2)}</pre>
+            `;
+            log('Local data loaded');
+        }
+
+        function clearLocalData() {
+            localStorage.clear();
+            document.getElementById('localData').innerHTML = '';
+            log('Local data cleared');
+            alert('All local data cleared!');
+        }
+
+        log('Test page loaded successfully!');
+    </script>
+</body>
+</html>

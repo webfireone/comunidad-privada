@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growith - AI Design Agency | Digital Marketing & CRM</title>
+    <meta name="description" content="Transform your digital presence with AI-powered design and marketing solutions. Premium digital agency for social CRM and conversion optimization.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Growith</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#admin" class="nav-link nav-link-admin">Admin</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-outline">Login</a>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-badge" data-animate="fade-up">
+                <span class="badge-dot"></span>
+                AI-Powered Digital Agency
+            </div>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                Transform Your<br>
+                <span class="text-gradient">Digital Future</span><br>
+                With AI Precision
+            </h1>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                We craft premium digital experiences that convert. AI-driven design, 
+                social CRM mastery, and data-powered marketing for brands that demand excellence.
+            </p>
+            <div class="hero-cta" data-animate="fade-up" data-delay="300">
+                <a href="#contact" class="btn btn-hero">
+                    Start Growing Now
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#process" class="btn btn-outline-hero">See How It Works</a>
+            </div>
+            <div class="hero-stats" data-animate="fade-up" data-delay="400">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="450">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="12">0</span><span class="stat-suffix">x</span>
+                    <span class="stat-label">Average ROI</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Clients Marquee -->
+    <section class="clients">
+        <div class="container">
+            <p class="clients-label">Trusted by innovative companies</p>
+        </div>
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-item">TechVision</div>
+                <div class="marquee-item">DataFlow</div>
+                <div class="marquee-item">CloudScale</div>
+                <div class="marquee-item">NexGen</div>
+                <div class="marquee-item">AI Dynamics</div>
+                <div class="marquee-item">FutureLab</div>
+                <div class="marquee-item">SmartReach</div>
+                <div class="marquee-item">PixelCraft</div>
+                <div class="marquee-item">TechVision</div>
+                <div class="marquee-item">DataFlow</div>
+                <div class="marquee-item">CloudScale</div>
+                <div class="marquee-item">NexGen</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">Our Services</span>
+                <h2 class="section-title">Premium Solutions for<br><span class="text-gradient">Digital Excellence</span></h2>
+                <p class="section-subtitle">We combine AI technology with human creativity to deliver exceptional results</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">AI Design Systems</h3>
+                    <p class="service-desc">Custom design systems powered by AI that scale with your brand and adapt to user behavior.</p>
+                    <a href="#" class="service-link">
+                        Explore Service
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Social CRM Platform</h3>
+                    <p class="service-desc">Unified social media management with AI-driven insights and automated customer journeys.</p>
+                    <a href="#" class="service-link">
+                        Explore Service
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="300">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Conversion Optimization</h3>
+                    <p class="service-desc">Data-driven strategies that maximize conversions and minimize customer acquisition costs.</p>
+                    <a href="#" class="service-link">
+                        Explore Service
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="400">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Growth Marketing</h3>
+                    <p class="service-desc">AI-powered campaigns that scale your business across all digital channels simultaneously.</p>
+                    <a href="#" class="service-link">
+                        Explore Service
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="500">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Data Analytics</h3>
+                    <p class="service-desc">Real-time analytics dashboards with predictive insights for strategic decision-making.</p>
+                    <a href="#" class="service-link">
+                        Explore Service
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="600">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Brand Strategy</h3>
+                    <p class="service-desc">Comprehensive brand positioning with AI market analysis and competitor intelligence.</p>
+                    <a href="#" class="service-link">
+                        Explore Service
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">Our Process</span>
+                <h2 class="section-title">How We Deliver<br><span class="text-gradient">Exceptional Results</span></h2>
+                <p class="section-subtitle">A proven methodology that combines AI efficiency with human expertise</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card" data-animate="fade-up" data-delay="100">
+                    <span class="process-number">01</span>
+                    <h3 class="process-title">Discovery & Strategy</h3>
+                    <p class="process-desc">We analyze your market, competitors, and audience using AI-powered insights to craft a winning strategy.</p>
+                </div>
+                <div class="process-card" data-animate="fade-up" data-delay="200">
+                    <span class="process-number">02</span>
+                    <h3 class="process-title">Design & Prototype</h3>
+                    <p class="process-desc">Rapid prototyping with AI design systems, creating pixel-perfect interfaces that convert.</p>
+                </div>
+                <div class="process-card" data-animate="fade-up" data-delay="300">
+                    <span class="process-number">03</span>
+                    <h3 class="process-title">Development & CRM</h3>
+                    <p class="process-desc">Building scalable solutions with integrated social CRM and marketing automation.</p>
+                </div>
+                <div class="process-card" data-animate="fade-up" data-delay="400">
+                    <span class="process-number">04</span>
+                    <h3 class="process-title">Launch & Optimize</h3>
+                    <p class="process-desc">Continuous optimization with A/B testing, analytics, and AI-driven improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our Clients<br><span class="text-gradient">Say About Us</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-animate="fade-up" data-delay="100">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"Growith transformed our digital presence completely. Our conversions increased by 340% in just three months. The AI-powered CRM is a game-changer."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <span class="author-name">Sarah Johnson</span>
+                            <span class="author-role">CEO, TechVision</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="200">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"The team's expertise in AI design systems helped us scale faster than we imagined. Professional, responsive, and truly premium service."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <span class="author-name">Michael Roberts</span>
+                            <span class="author-role">Founder, DataFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="300">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"Best investment we've made. The social CRM integration alone saved us 20 hours per week. Highly recommend their services."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EC</div>
+                        <div class="author-info">
+                            <span class="author-name">Emma Chen</span>
+                            <span class="author-role">CMO, CloudScale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News / Blog Section -->
+    <section class="news" id="news">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">Latest News</span>
+                <h2 class="section-title">Insights & Updates<br><span class="text-gradient">From Our Team</span></h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card" data-animate="fade-up" data-delay="100">
+                    <div class="news-image">
+                        <div class="news-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">Dec 15, 2025</span>
+                        <h3 class="news-title">The Future of AI in Digital Marketing</h3>
+                        <p class="news-excerpt">Exploring how artificial intelligence is reshaping customer engagement and campaign optimization...</p>
+                        <a href="#" class="news-link">Read More →</a>
+                    </div>
+                </article>
+                <article class="news-card" data-animate="fade-up" data-delay="200">
+                    <div class="news-image">
+                        <div class="news-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">Dec 10, 2025</span>
+                        <h3 class="news-title">Building Scalable CRM Systems</h3>
+                        <p class="news-excerpt">Best practices for designing customer relationship management platforms that grow with your business...</p>
+                        <a href="#" class="news-link">Read More →</a>
+                    </div>
+                </article>
+                <article class="news-card" data-animate="fade-up" data-delay="300">
+                    <div class="news-image">
+                        <div class="news-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">Dec 5, 2025</span>
+                        <h3 class="news-title">Conversion Rate Optimization Trends</h3>
+                        <p class="news-excerpt">Latest strategies and tools for maximizing your website's conversion potential in 2026...</p>
+                        <a href="#" class="news-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Profiles Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">Meet The Experts<br><span class="text-gradient">Behind Our Success</span></h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-animate="fade-up" data-delay="100">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">AK</div>
+                    </div>
+                    <h3 class="team-name">Alex Kovalev</h3>
+                    <span class="team-role">Lead AI Architect</span>
+                    <p class="team-bio">10+ years crafting AI solutions for global brands.</p>
+                </div>
+                <div class="team-card" data-animate="fade-up" data-delay="200">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">SM</div>
+                    </div>
+                    <h3 class="team-name">Sofia Martinez</h3>
+                    <span class="team-role">Creative Director</span>
+                    <p class="team-bio">Award-winning designer with passion for user experience.</p>
+                </div>
+                <div class="team-card" data-animate="fade-up" data-delay="300">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">JD</div>
+                    </div>
+                    <h3 class="team-name">James Donovan</h3>
+                    <span class="team-role">Growth Marketing Lead</span>
+                    <p class="team-bio">Data-driven strategist focused on scalable growth.</p>
+                </div>
+                <div class="team-card" data-animate="fade-up" data-delay="400">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">LN</div>
+                    </div>
+                    <h3 class="team-name">Lisa Nguyen</h3>
+                    <span class="team-role">CRM Specialist</span>
+                    <p class="team-bio">Expert in social CRM integration and automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked<br><span class="text-gradient">Questions</span></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" data-animate="fade-up" data-delay="100">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What makes Growith different from other agencies?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We combine cutting-edge AI technology with human creativity to deliver solutions that are both innovative and emotionally resonant. Our proprietary AI design systems and social CRM platform set us apart.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate="fade-up" data-delay="200">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How long does a typical project take?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Project timelines vary based on scope. A typical landing page takes 2-3 weeks, while full CRM implementations can take 6-8 weeks. We provide detailed timelines during our discovery phase.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate="fade-up" data-delay="300">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you provide ongoing support?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer various support and maintenance packages to ensure your digital assets continue performing optimally. This includes regular updates, analytics reviews, and optimization.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate="fade-up" data-delay="400">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can you integrate with our existing tools?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Our solutions are designed to integrate seamlessly with popular platforms like Salesforce, HubSpot, Meta Business, Google Analytics, and more.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate="fade-up" data-delay="500">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is your pricing model?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer project-based pricing, retainer models, and custom enterprise packages. Book a consultation to get a tailored quote based on your specific needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel Preview Section -->
+    <section class="admin" id="admin">
+        <div class="container">
+            <div class="admin-wrapper">
+                <div class="admin-content" data-animate="fade-up">
+                    <span class="section-label">Admin Panel</span>
+                    <h2 class="section-title">Powerful Dashboard<br><span class="text-gradient">For Your Team</span></h2>
+                    <p class="admin-desc">Manage campaigns, track conversions, and analyze customer journeys from one intuitive interface.</p>
+                    <ul class="admin-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            Real-time analytics & reporting
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            Social media management
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            AI-powered insights
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            Team collaboration tools
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Request Demo</a>
+                </div>
+                <div class="admin-preview" data-animate="fade-up" data-delay="200">
+                    <div class="admin-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="mockup-title">Growith Dashboard</span>
+                        </div>
+                        <div class="mockup-content">
+                            <div class="mockup-sidebar">
+                                <div class="sidebar-item active">Analytics</div>
+                                <div class="sidebar-item">Campaigns</div>
+                                <div class="sidebar-item">Customers</div>
+                                <div class="sidebar-item">Reports</div>
+                            </div>
+                            <div class="mockup-main">
+                                <div class="chart-placeholder">
+                                    <div class="chart-bar" style="--height: 60%"></div>
+                                    <div class="chart-bar" style="--height: 80%"></div>
+                                    <div class="chart-bar" style="--height: 45%"></div>
+                                    <div class="chart-bar" style="--height: 90%"></div>
+                                    <div class="chart-bar" style="--height: 70%"></div>
+                                    <div class="chart-bar" style="--height: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content" data-animate="fade-up">
+                <span class="section-label">Get Started</span>
+                <h2 class="cta-title">Ready to Transform<br><span class="text-gradient">Your Digital Presence?</span></h2>
+                <p class="cta-desc">Join hundreds of companies already growing with our AI-powered solutions.</p>
+                <form class="cta-form" onsubmit="event.preventDefault(); alert('Demo requested! We will contact you soon.');">
+                    <input type="email" placeholder="Enter your email" class="cta-input" required>
+                    <button type="submit" class="btn btn-hero">Get Free Demo</button>
+                </form>
+                <p class="cta-note">No credit card required. Start your 14-day free trial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Growith</span>
+                    </a>
+                    <p class="footer-desc">AI-powered digital agency crafting premium experiences for forward-thinking brands.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="#" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="#">AI Design Systems</a>
+                    <a href="#">Social CRM</a>
+                    <a href="#">Growth Marketing</a>
+                    <a href="#">Data Analytics</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Team</a>
+                    <a href="#">Careers</a>
+                    <a href="#">News</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Status</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Growith. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="form-handler.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
