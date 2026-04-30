@@ -1,14 +1,17 @@
 {
   "name": "growith-landing",
   "version": "1.0.0",
-  "description": "Growith - AI Design Agency Landing Page (Static Site)",
-  "main": "index.html",
+  "description": "Growith - AI Design Agency Landing Page (Web Service)",
+  "main": "server.js",
   "scripts": {
-    "build": "echo 'Static site - no build needed'",
-    "deploy:firebase": "firebase deploy",
+    "start": "node server.js",
+    "dev": "node server.js",
     "test": "node -c script.js && node -c admin.js"
   },
-  "keywords": ["landing-page", "ai", "design-agency", "saas", "crm", "admin-panel", "static"],
+  "keywords": ["landing-page", "ai", "design-agency", "saas", "crm", "admin-panel", "web-service"],
   "author": "Growith Team",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

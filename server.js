@@ -1,6 +1,6 @@
 /**
- * Growith Local Development Server
- * Simple Express server for local development with API endpoints
+ * Growith Server - Express.js
+ * Serves static files for Web Service deployment
  */
 
 const express = require('express');
@@ -8,12 +8,24 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json());
+// Serve static files
 app.use(express.static(__dirname));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// API Routes
+// Routes
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
+app.get('/test', (req, res) => {
+    res.sendFile(path.join(__dirname, 'test.html'));
+});
+
+// API Health Check
 app.get('/api/health', (req, res) => {
     res.json({ 
         status: 'ok', 
@@ -23,24 +35,23 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// Contact form endpoint
+// API: Contact form
 app.post('/api/contact', (req, res) => {
-    const { name, email, message } = req.body;
+    const { email, name, message } = req.body;
     
     if (!email) {
         return res.status(400).json({ error: 'Email is required' });
     }
     
-    console.log('New contact:', { name, email, message });
+    console.log('New contact:', { email, name, message });
     
     res.json({ 
         success: true, 
-        message: 'Thank you! We will contact you soon.',
-        data: { name, email }
+        message: 'Thank you! We will contact you soon.'
     });
 });
 
-// Newsletter subscription
+// API: Newsletter subscription
 app.post('/api/subscribe', (req, res) => {
     const { email } = req.body;
     
@@ -52,11 +63,11 @@ app.post('/api/subscribe', (req, res) => {
     
     res.json({ 
         success: true, 
-        message: 'Successfully subscribed to our newsletter!' 
+        message: 'Successfully subscribed!'
     });
 });
 
-// Get stats (mock data)
+// API: Get stats
 app.get('/api/stats', (req, res) => {
     res.json({
         users: 2847,
@@ -66,36 +77,15 @@ app.get('/api/stats', (req, res) => {
     });
 });
 
-// Get campaigns (mock data)
-app.get('/api/campaigns', (req, res) => {
-    res.json([
-        { id: 1, name: 'Summer Sale 2025', status: 'active', users: 1247, conversion: '23.5%', revenue: 45230 },
-        { id: 2, name: 'Product Launch', status: 'active', users: 892, conversion: '18.7%', revenue: 32100 },
-        { id: 3, name: 'Holiday Special', status: 'paused', users: 634, conversion: '15.2%', revenue: 21450 }
-    ]);
-});
-
 // 404 handler
 app.use((req, res) => {
     res.status(404).json({ error: 'Not found' });
 });
 
-// Error handler
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: 'Internal server error' });
-});
-
 // Start server
 app.listen(PORT, () => {
-    console.log('\x1b[32m%s\x1b[0m', '='.repeat(50));
-    console.log('\x1b[36m%s\x1b[0m', '  🚀 Growith Server Running!');
-    console.log('\x1b[32m%s\x1b[0m', '='.repeat(50));
-    console.log('');
-    console.log('  📍 Local:  \x1b[34mhttp://localhost:' + PORT + '\x1b[0m');
-    console.log('  📍 Landing: \x1b[34mhttp://localhost:' + PORT + '/index.html\x1b[0m');
-    console.log('  📍 Admin:   \x1b[34mhttp://localhost:' + PORT + '/admin.html\x1b[0m');
-    console.log('  📍 API:     \x1b[34mhttp://localhost:' + PORT + '/api/health\x1b[0m');
-    console.log('');
-    console.log('\x1b[32m%s\x1b[0m', '='.repeat(50));
+    console.log(`🚀 Growith server running on port ${PORT}`);
+    console.log(`📍 Landing: http://localhost:${PORT}`);
+    console.log(`📍 Admin: http://localhost:${PORT}/admin`);
+    console.log(`📍 Test: http://localhost:${PORT}/test`);
 });
